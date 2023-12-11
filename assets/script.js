@@ -63,7 +63,7 @@ const adicionarItemBanco = (evento) => {
         InputTexto.placeholder = 'Digite uma Tarefa !';
     }
 
-    if(evento.type === "click" && InputTexto.value==''|| InputTexto.value=='' && evento.keyCode==13 ){
+    if(evento.type === "click" && InputTexto.value==''|| evento.keyCode==13 && InputTexto.value==''){
         InputTexto.focus()
         InputTexto.placeholder = 'Digite uma Tarefa !';
     }
