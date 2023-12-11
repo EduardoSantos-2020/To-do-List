@@ -54,10 +54,6 @@ const adicionarItemBanco = (evento) => {
     InputTexto = document.querySelector('#input-text');
 
     if (InputTexto.value >"" && (evento.type === "click"||evento.keyCode==13)) {
-      if(InputTexto.value=="" && evento.keyCode==13){
-        InputTexto.focus()
-        InputTexto.placeholder = 'Digite uma Tarefa !';       
-       }
         Banco.push({ 'tarefa': InputTexto.value, "Status": false});
         InputTexto.value = '';
         InputTexto.placeholder = 'Qual é sua nova tarefa !';
@@ -67,7 +63,7 @@ const adicionarItemBanco = (evento) => {
         InputTexto.placeholder = 'Digite uma Tarefa !';
     }
 
-    if(evento.type === "click" && InputTexto.value==''){
+    if(evento.type === "click" && InputTexto.value==''|| InputTexto.value=='' && evento.keyCode==13 ){
         InputTexto.focus()
         InputTexto.placeholder = 'Digite uma Tarefa !';
     }
