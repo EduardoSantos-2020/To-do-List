@@ -53,7 +53,7 @@ const adicionarItemBanco = (evento) => {
 
     InputTexto = document.querySelector('#input-text');
 
-    if (InputTexto.value >"" && evento.type === "click") {
+    if (InputTexto.value >"" && (evento.type === "click"||evento.keyCode==13)) {
 
         Banco.push({ 'tarefa': InputTexto.value, "Status": false});
         InputTexto.value = '';
