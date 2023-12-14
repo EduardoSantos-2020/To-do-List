@@ -58,7 +58,7 @@ const adicionarItemBanco = (evento) => {
         Banco.push({ 'tarefa': InputTexto.value, "Status": false});
         InputTexto.value = '';
         InputTexto.placeholder = 'Qual é sua nova tarefa !';
-     verificarLista()
+     
     }
     if(evento.keyCode==32 && InputTexto.value==''){
         evento.preventDefault();
@@ -70,7 +70,7 @@ const adicionarItemBanco = (evento) => {
         InputTexto.placeholder = 'Digite uma Tarefa !';
         
     }
-
+    verificarLista()
     atualizandoTela();
 }
 
