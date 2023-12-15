@@ -92,8 +92,9 @@ body {
 .lista-tarefas {
   display: flex;
   flex-direction: column;
+  alin-itens:center
   justify-content: center;
-  overflow:hidden;
+  height:100%
 }
 
 .Itemcheck {
