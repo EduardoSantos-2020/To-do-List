@@ -102,7 +102,7 @@ const verificarCheckbox = (indice) => {
 const verificarLista=()=>{
     let listTarefas=document.querySelector('#ItemList').lastElementChild 
     //listTarefas.scrollIntoView({ inline:'start',behavior: 'smooth', })
-     Windows.scrollTo(0,listTarefas)
+     window.scrollTo(0,listTarefas)
 }
 
 const marcaCheckbox = (itemBox,i) => {
