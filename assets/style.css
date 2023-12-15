@@ -92,7 +92,7 @@ body {
 .lista-tarefas {
   display: flex;
   flex-direction: column;
-  alin-itens:center
+  align-items:center
   justify-content: center;
   height:100%
 }
