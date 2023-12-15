@@ -10,8 +10,8 @@ body {
   padding: 0;
 }
 
-.container{
-  
+.container {
+
   overflow: hidden;
 }
 
@@ -19,7 +19,7 @@ body {
 
 .lista-input {
   width: 100%;
- border-radius: 6px;  
+  border-radius: 6px;
 }
 
 .containerInput {
@@ -35,7 +35,7 @@ body {
   outline: none;
   border: solid 2px #000;
   font-size: 1rem;
-  width:40%;
+  width: 40%;
   font-weight: bold;
   border-radius: 4px;
   box-shadow: 2px 2px 3px #000;
@@ -95,7 +95,8 @@ body {
   margin: 0 auto;
   flex-direction: column;
 }
-.lista-tarefas::-webkit-scrollbar{
+
+.lista-tarefas::-webkit-scrollbar {
   display: none;
 }
 
@@ -252,9 +253,10 @@ body {
   }
 
 
-.lista-tarefas {
-  width: 100%;
-}
+  .lista-tarefas {
+    width: 100%;
+  }
+
   .Itemcheck {
     width: 80%;
     margin: 1em;
@@ -282,28 +284,31 @@ body {
     height: 1rem;
   }
 
-  .container-check input:not(:checked)~.checkmark{
+  .container-check input:not(:checked)~.checkmark {
     background-color: #CCC;
   }
 
   .text-list {
     font-size: .90rem;
   }
+
   .Itemcheck button {
     font-size: 22px;
     padding: 0 .2rem;
   }
 
   .container-check:hover .checkmark {
-   background-color: #CCC;
+    background-color: #CCC;
   }
-    .Itemcheck:hover {
+
+  .Itemcheck:hover {
     background-color: #fff;
     color: #000;
   }
+
   .Itemcheck button:hover {
-   color: #000;
-   background-color: #fff;
+    color: #000;
+    background-color: #fff;
   }
 
 
