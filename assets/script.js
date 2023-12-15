@@ -1,9 +1,4 @@
-let Banco = [{ 'tarefa': 'Estudar as 8 horas da manhã', 'Status': true },
-{ 'tarefa': 'Estudar as 8 horas da manhã', 'Status': true },
-{ 'tarefa': 'Estudar as 8 horas da manhã', 'Status': true },
-{ 'tarefa': 'Estudar as 8 horas da manhã', 'Status': true },
-
-];
+let Banco = [{ 'tarefa': 'Estudar as 8 horas da manhã', 'Status': true },];
 
 const criandoItem = (Text, indice) => {
     let item = document.createElement('div');
