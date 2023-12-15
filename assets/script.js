@@ -1,4 +1,8 @@
 let Banco = [{ 'tarefa': 'Estudar as 8 horas da manhã', 'Status': true },
+{ 'tarefa': 'Estudar as 8 horas da manhã', 'Status': true },
+{ 'tarefa': 'Estudar as 8 horas da manhã', 'Status': true },
+{ 'tarefa': 'Estudar as 8 horas da manhã', 'Status': true },
+
 ];
 
 const criandoItem = (Text, indice) => {
@@ -35,6 +39,7 @@ const criandoItem = (Text, indice) => {
 
     item.append(contCheck, containerText, button);
     document.getElementById('ItemList').appendChild(item);
+
 }
 
 
@@ -58,7 +63,9 @@ const adicionarItemBanco = (evento) => {
         Banco.push({ 'tarefa': InputTexto.value, "Status": false});
         InputTexto.value = '';
         InputTexto.placeholder = 'Qual é sua nova tarefa !';
-        
+        atualizandoTela();
+        let tarefa=document.querySelector('#ItemList').lastElementChild
+        verificarLista(tarefa)
     }
     if(evento.keyCode==32 && InputTexto.value==''){
         evento.preventDefault();
@@ -70,7 +77,7 @@ const adicionarItemBanco = (evento) => {
         InputTexto.placeholder = 'Digite uma Tarefa !';
         
     }
-   verificarLista() 
+   
     atualizandoTela();
 }
 
@@ -99,10 +106,10 @@ const verificarCheckbox = (indice) => {
     atualizandoTela()
 }
 
-const verificarLista=()=>{
-    let listTarefas=document.querySelector('#ItemList').lastElementChild 
-    //listTarefas.scrollIntoView({ inline:'start',behavior: 'smooth', })
-     window.scrollTo(0,listTarefas)
+const verificarLista=(item)=>{
+    listTarefas=document.querySelector('#ItemList')
+    item.scrollIntoView({ inline:'start',behavior: 'smooth', })
+    //listTarefas.scrollTo(0,listTarefasHeight)
 }
 
 const marcaCheckbox = (itemBox,i) => {
