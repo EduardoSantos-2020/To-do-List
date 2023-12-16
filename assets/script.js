@@ -114,7 +114,7 @@ const focusElement = () => {
 
     let item = document.querySelector('#ItemList').lastElementChild;
 
-    item.scrollIntoView({ inline: 'end', behavior: 'smooth', });
+    item.scrollIntoView({ inline: 'center', behavior: 'smooth', });
 
 }
 
