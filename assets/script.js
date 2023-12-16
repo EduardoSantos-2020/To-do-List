@@ -58,10 +58,14 @@ const adicionarItemBanco = (evento) => {
         Banco.push({ 'tarefa': InputTexto.value, "Status": false });
         InputTexto.value = '';
         InputTexto.placeholder = 'Qual é sua nova tarefa !';
-        
-        atualizandoTela();
 
+        atualizandoTela();
         focusElement();
+
+        if (window.innerWidth > 992) {
+            InputTexto.focus();
+        }
+
     }
     if (evento.keyCode == 32 && InputTexto.value == '') {
         evento.preventDefault();
@@ -69,7 +73,11 @@ const adicionarItemBanco = (evento) => {
     }
 
     if (evento.type === "click" && InputTexto.value == '' || evento.keyCode == 13 && InputTexto.value == '') {
-        InputTexto.focus()
+
+        if (window.innerWidth > 992) {
+            InputTexto.focus();
+        }
+
         InputTexto.placeholder = 'Digite uma Tarefa !';
 
     }
