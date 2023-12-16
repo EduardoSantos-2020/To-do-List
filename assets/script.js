@@ -69,9 +69,7 @@ const adicionarItemBanco = (evento) => {
     }
 
     if (evento.type === "click" && InputTexto.value == '' || evento.keyCode == 13 && InputTexto.value == '') {
-       if(window.innerWidth>992){
         InputTexto.focus()
-        }
         InputTexto.placeholder = 'Digite uma Tarefa !';
 
     }
