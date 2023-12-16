@@ -54,7 +54,9 @@ const adicionarItemBanco = (evento) => {
 
     InputTexto = document.querySelector('#input-text');
 
-    if (InputTexto.value > "" && evento.type === "click" || evento.keyCode === 13) {
+    console.log(evento);
+    if (InputTexto.value > "" && (evento.type === "click" || evento.keyCode === 13|| evento.type=='touchstart')) {
+
         Banco.push({ 'tarefa': InputTexto.value, "Status": false });
         InputTexto.value = '';
         InputTexto.placeholder = 'Qual é sua nova tarefa !';
@@ -67,17 +69,16 @@ const adicionarItemBanco = (evento) => {
         }
 
     }
-    if (evento.keyCode == 32 && InputTexto.value == '') {
+    if (evento.keyCode == 32 || evento.type=='touchstart'|| evento.type === "click" && InputTexto.value == '') {
         evento.preventDefault();
+        InputTexto.focus();
         InputTexto.placeholder = 'Digite uma Tarefa !';
     }
 
-    if (evento.type === "click" && InputTexto.value == '' || evento.keyCode == 13 && InputTexto.value == '') {
+    if (evento.type === "click" || evento.type=='touchstart' || evento.keyCode == 13 && InputTexto.value == '') {
 
-        if (window.innerWidth > 992) {
             InputTexto.focus();
-        }
-
+    
         InputTexto.placeholder = 'Digite uma Tarefa !';
 
     }
@@ -135,6 +136,7 @@ const marcaCheckbox = (itemBox, i) => {
 atualizandoTela();
 
 document.querySelector('#btn-enviar').addEventListener('click', adicionarItemBanco);
+document.querySelector('#btn-enviar').addEventListener('touchstart', adicionarItemBanco);
 document.getElementById('input-text').addEventListener('keypress', adicionarItemBanco);
 document.querySelector('#ItemList').addEventListener('click', ClickCadaItem);
 
