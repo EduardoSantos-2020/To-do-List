@@ -136,7 +136,7 @@ const marcaCheckbox = (itemBox, i) => {
 atualizandoTela();
 
 document.querySelector('#btn-enviar').addEventListener('click', adicionarItemBanco);
-document.querySelector('#btn-enviar').addEventListener('touchstart', adicionarItemBanco);
+document.querySelector('#btn-enviar').addEventListener('touchstart', adicionarItemBanco,false);
 document.getElementById('input-text').addEventListener('keypress', adicionarItemBanco);
 document.querySelector('#ItemList').addEventListener('click', ClickCadaItem);
 
