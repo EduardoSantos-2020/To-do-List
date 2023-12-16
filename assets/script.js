@@ -54,8 +54,7 @@ const adicionarItemBanco = (evento) => {
 
     InputTexto = document.querySelector('#input-text');
 
-    console.log(evento);
-    if (InputTexto.value > "" && (evento.type === "click" || evento.keyCode === 13|| evento.type=='touchstart')) {
+    if (InputTexto.value > "" && (evento.type === "click" || evento.keyCode === 13|| evento.type ==='touchstart')) {
 
         Banco.push({ 'tarefa': InputTexto.value, "Status": false });
         InputTexto.value = '';
