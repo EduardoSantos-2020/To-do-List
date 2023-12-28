@@ -47,8 +47,8 @@ const limparTela = () => {
 }
 
 const atualizandoTela = () => {
-    limparTela()
-    Banco.forEach((item, indice) => { criandoItem(item.tarefa, indice), marcaCheckbox(item, indice) })
+    limparTela();
+    Banco.forEach((item, indice) => { criandoItem(item.tarefa, indice), marcaCheckbox(item, indice) }),focusElement();
 }
 const adicionarItemBanco = (evento) => {
 
@@ -60,13 +60,9 @@ const adicionarItemBanco = (evento) => {
         InputTexto.value = '';
         InputTexto.placeholder = 'Qual é sua nova tarefa !';
 
-        atualizandoTela();
-        focusElement();
-
         if (window.innerWidth > 992) {
             InputTexto.focus();
         }
-
     }
     if (evento.keyCode == 32 || evento.type=='touchstart'|| evento.type === "click" && InputTexto.value == '') {
         evento.preventDefault();
@@ -111,7 +107,7 @@ const verificarCheckbox = (indice) => {
 }
 
 const focusElement = () => {
-
+    
     let item = document.querySelector('#ItemList').lastElementChild;
 
     item.scrollIntoView({ inline: 'center', behavior: 'smooth', });
