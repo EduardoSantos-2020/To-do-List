@@ -120,8 +120,8 @@ const verificarCheckbox = (indice) => {
 
 const focusElement = (element) => {
 console.log(element.lastElementChild);
-// let item = element.lastElementChild
-//  item.scrollIntoView({ inline: 'center', behavior: 'smooth', });
+let item = element.lastElementChild
+item.scrollIntoView({ inline: 'center', behavior: 'smooth', });
 
 }
 
