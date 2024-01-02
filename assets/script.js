@@ -48,7 +48,11 @@ const limparTela = () => {
 
 const atualizandoTela = () => {
     limparTela();
-    Banco.forEach((item, indice) => { criandoItem(item.tarefa, indice), marcaCheckbox(item, indice) }),focusElement();
+    Banco.forEach((item, indice) => { criandoItem(item.tarefa, indice), marcaCheckbox(item, indice)})
+}
+
+const atualizarIndice=()=>{
+   document.querySelectorAll('#ItemList').forEach((item,indice)=>focusElement(item,indice));
 }
 const adicionarItemBanco = (evento) => {
 
@@ -57,17 +61,24 @@ const adicionarItemBanco = (evento) => {
     if (InputTexto.value > "" && (evento.type === "click" || evento.keyCode === 13|| evento.type ==='touchstart')) {
 
         Banco.push({ 'tarefa': InputTexto.value, "Status": false });
+
         InputTexto.value = '';
         InputTexto.placeholder = 'Qual é sua nova tarefa !';
 
+        
         if (window.innerWidth > 992) {
             InputTexto.focus();
+            atualizandoTela()
         }
+        
+        atualizandoTela()
+        atualizarIndice()
     }
     if (evento.keyCode == 32 || evento.type=='touchstart'|| evento.type === "click" && InputTexto.value == '') {
         evento.preventDefault();
         InputTexto.focus();
         InputTexto.placeholder = 'Digite uma Tarefa !';
+        atualizandoTela()
     }
 
     if (evento.type === "click" || evento.type=='touchstart' || evento.keyCode == 13 && InputTexto.value == '') {
@@ -76,9 +87,10 @@ const adicionarItemBanco = (evento) => {
     
         InputTexto.placeholder = 'Digite uma Tarefa !';
 
+        atualizandoTela()
     }
-
-    atualizandoTela();
+    
+ 
 }
 
 const ClickCadaItem = (evento) => {
@@ -106,11 +118,10 @@ const verificarCheckbox = (indice) => {
     atualizandoTela()
 }
 
-const focusElement = () => {
-    
-    let item = document.querySelector('#ItemList').lastElementChild;
-
-    item.scrollIntoView({ inline: 'center', behavior: 'smooth', });
+const focusElement = (element) => {
+console.log(element.lastElementChild);
+// let item = element.lastElementChild
+//  item.scrollIntoView({ inline: 'center', behavior: 'smooth', });
 
 }
 
@@ -127,8 +138,8 @@ const marcaCheckbox = (itemBox, i) => {
         label.style.textDecoration = 'none';
     }
 }
-
 atualizandoTela();
+
 if (window.innerWidth>992) {
     document.querySelector('#btn-enviar').addEventListener('click', adicionarItemBanco);
     document.querySelector('#ItemList').addEventListener('click', ClickCadaItem);
