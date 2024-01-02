@@ -48,49 +48,49 @@ const limparTela = () => {
 
 const atualizandoTela = () => {
     limparTela();
-    Banco.forEach((item, indice) => { criandoItem(item.tarefa, indice), marcaCheckbox(item, indice)})
+    Banco.forEach((item, indice) => { criandoItem(item.tarefa, indice), marcaCheckbox(item, indice) })
 }
 
-const atualizarIndice=()=>{
-   document.querySelectorAll('#ItemList').forEach((item,indice)=>focusElement(item,indice));
+const atualizarIndice = () => {
+    document.querySelectorAll('#ItemList').forEach((item, indice) => focusElement(item, indice));
 }
 const adicionarItemBanco = (evento) => {
 
     InputTexto = document.querySelector('#input-text');
 
-    if (InputTexto.value > "" && (evento.type === "click" || evento.keyCode === 13|| evento.type ==='touchstart')) {
+    if (InputTexto.value > "" && (evento.type === "click" || evento.keyCode === 13 || evento.type === 'touchstart')) {
 
         Banco.push({ 'tarefa': InputTexto.value, "Status": false });
 
         InputTexto.value = '';
         InputTexto.placeholder = 'Qual é sua nova tarefa !';
 
-        
+
         if (window.innerWidth > 992) {
             InputTexto.focus();
             atualizandoTela()
         }
-        
+
         atualizandoTela()
         atualizarIndice()
     }
-    if (evento.keyCode == 32 || evento.type=='touchstart'|| evento.type === "click" && InputTexto.value == '') {
+    if (evento.keyCode == 32 || evento.type == 'touchstart' || evento.type === "click" && InputTexto.value == '') {
         evento.preventDefault();
         InputTexto.focus();
         InputTexto.placeholder = 'Digite uma Tarefa !';
         atualizandoTela()
     }
 
-    if (evento.type === "click" || evento.type=='touchstart' || evento.keyCode == 13 && InputTexto.value == '') {
+    if (evento.type === "click" || evento.type == 'touchstart' || evento.keyCode == 13 && InputTexto.value == '') {
 
-            InputTexto.focus();
-    
+        InputTexto.focus();
+
         InputTexto.placeholder = 'Digite uma Tarefa !';
 
         atualizandoTela()
     }
-    
- 
+
+
 }
 
 const ClickCadaItem = (evento) => {
@@ -119,9 +119,8 @@ const verificarCheckbox = (indice) => {
 }
 
 const focusElement = (element) => {
-console.log(element.lastElementChild);
-let item = element.lastElementChild
-item.scrollIntoView({ inline: 'center', behavior: 'smooth', });
+    let item = element.lastElementChild
+    item.scrollIntoView({ inline: 'center', behavior: 'smooth', });
 
 }
 
@@ -140,13 +139,13 @@ const marcaCheckbox = (itemBox, i) => {
 }
 atualizandoTela();
 
-if (window.innerWidth>992) {
+if (window.innerWidth > 992) {
     document.querySelector('#btn-enviar').addEventListener('click', adicionarItemBanco);
     document.querySelector('#ItemList').addEventListener('click', ClickCadaItem);
 }
 
-document.querySelector('#btn-enviar').addEventListener('touchstart', adicionarItemBanco,false);
-document.querySelector('#ItemList').addEventListener('touchstart', ClickCadaItem,false);
+document.querySelector('#btn-enviar').addEventListener('touchstart', adicionarItemBanco, false);
+document.querySelector('#ItemList').addEventListener('touchstart', ClickCadaItem, false);
 document.getElementById('input-text').addEventListener('keypress', adicionarItemBanco);
 
 
