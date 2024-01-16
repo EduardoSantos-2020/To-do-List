@@ -47,6 +47,7 @@ const limparTela = () => {
 }
 
 const atualizandoTela = () => {
+   
     limparTela();
     Banco.forEach((item, indice) =>{criandoItem(item.tarefa, indice), marcaCheckbox(item, indice)})
 }
@@ -119,7 +120,7 @@ const verificarCheckbox = (indice) => {
 }
 
 const focusElement = (element) => {
-    let item = element.lastElementChild
+    let item = element.lastElementChild;
     item.scrollIntoView({ inline: 'center', behavior: 'smooth', });
 
 }
@@ -136,7 +137,6 @@ const marcaCheckbox = (itemBox, i) => {
         checkbox.checked = false;
         label.style.textDecoration = 'none';
     }
-      atualizandoTela();
 }
 atualizandoTela();
 
@@ -144,7 +144,7 @@ if (window.innerWidth > 992) {
     document.querySelector('#btn-enviar').addEventListener('click', adicionarItemBanco);
     document.querySelector('#ItemList').addEventListener('click', ClickCadaItem);
 }
-
+atualizandoTela()
 document.querySelector('#btn-enviar').addEventListener('touchstart', adicionarItemBanco, false);
 document.querySelector('#ItemList').addEventListener('touchstart', ClickCadaItem, false);
 document.getElementById('input-text').addEventListener('keypress', adicionarItemBanco);
