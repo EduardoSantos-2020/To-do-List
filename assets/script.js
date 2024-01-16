@@ -144,7 +144,7 @@ if (window.innerWidth > 992) {
     document.querySelector('#btn-enviar').addEventListener('click', adicionarItemBanco);
     document.querySelector('#ItemList').addEventListener('click', ClickCadaItem);
 }
-
+atualizandoTela();
 document.querySelector('#btn-enviar').addEventListener('touchstart', adicionarItemBanco, false);
 document.querySelector('#ItemList').addEventListener('touchstart', ClickCadaItem, false);
 document.getElementById('input-text').addEventListener('keypress', adicionarItemBanco);
