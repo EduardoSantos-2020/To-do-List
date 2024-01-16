@@ -49,7 +49,7 @@ const limparTela = () => {
 const atualizandoTela = () => {
    
     limparTela();
-    Banco.forEach((item, indice) =>{criandoItem(item.tarefa, indice), marcaCheckbox(item, indice)})
+    Banco.forEach((item, indice) =>{criandoItem(item.tarefa, indice), marcaCheckbox(item, indice)});
 }
 
 const atualizarIndice = () => {
@@ -59,7 +59,7 @@ const adicionarItemBanco = (evento) => {
 
     InputTexto = document.querySelector('#input-text');
 
-    if (InputTexto.value > "" && (evento.type === "click" || evento.keyCode === 13 || evento.type === 'touchstart')) {
+    if (InputTexto.value > "" && (evento.type === "click" || evento.keyCode === 13 )) {
 
         Banco.push({ 'tarefa': InputTexto.value, "Status": false });
 
@@ -69,26 +69,26 @@ const adicionarItemBanco = (evento) => {
 
         if (window.innerWidth > 992) {
             InputTexto.focus();
-            atualizandoTela()
+            atualizandoTela();
         }
 
-        atualizandoTela()
-        atualizarIndice()
+        atualizandoTela();
+        atualizarIndice();
     }
-    if (evento.keyCode == 32 || evento.type == 'touchstart' || evento.type === "click" && InputTexto.value == '') {
+    if (evento.keyCode == 32 ||evento.type === "click" && InputTexto.value == '') {
         evento.preventDefault();
         InputTexto.focus();
         InputTexto.placeholder = 'Digite uma Tarefa !';
-        atualizandoTela()
+        atualizandoTela();
     }
 
-    if (evento.type === "click" || evento.type == 'touchstart' || evento.keyCode == 13 && InputTexto.value == '') {
+    if (evento.type === "click" || evento.keyCode == 13 && InputTexto.value == '') {
 
         InputTexto.focus();
 
         InputTexto.placeholder = 'Digite uma Tarefa !';
 
-        atualizandoTela()
+        atualizandoTela();
     }
 
 
@@ -99,7 +99,7 @@ const ClickCadaItem = (evento) => {
         const indiceElement = evento.target.dataset.indice;
         removeItemBanco(indiceElement)
 
-        atualizandoTela()
+        atualizandoTela();
     }
     else if (evento.target.type === 'checkbox') {
         const checkboxElement = evento.target.dataset.indice;
@@ -109,19 +109,19 @@ const ClickCadaItem = (evento) => {
 }
 
 const removeItemBanco = (indice) => {
-    Banco.splice(indice, 1)
-    atualizandoTela()
+    Banco.splice(indice, 1);
+    atualizandoTela();
 }
 
 
 const verificarCheckbox = (indice) => {
     Banco[indice].Status = Banco[indice].Status == false ? true : false;
-    atualizandoTela()
+    atualizandoTela();
 }
 
 const focusElement = (element) => {
     let item = element.lastElementChild;
-    item.scrollIntoView({ inline: 'center', behavior: 'smooth', });
+    item.scrollIntoView({ inline: 'center', behavior: 'smooth'});
 
 }
 
@@ -138,16 +138,12 @@ const marcaCheckbox = (itemBox, i) => {
         label.style.textDecoration = 'none';
     }
 }
-atualizandoTela();
 
-if (window.innerWidth > 992) {
-    document.querySelector('#btn-enviar').addEventListener('click', adicionarItemBanco);
+    atualizandoTela();
+
     document.querySelector('#ItemList').addEventListener('click', ClickCadaItem);
-}
-atualizandoTela()
-document.querySelector('#btn-enviar').addEventListener('touchstart', adicionarItemBanco, false);
-document.querySelector('#ItemList').addEventListener('touchstart', ClickCadaItem, false);
-document.getElementById('input-text').addEventListener('keypress', adicionarItemBanco);
+    document.querySelector('#btn-enviar').addEventListener('click', adicionarItemBanco);
+    document.getElementById('input-text').addEventListener('keypress', adicionarItemBanco);
 
 
 
