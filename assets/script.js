@@ -136,8 +136,9 @@ const marcaCheckbox = (itemBox, i) => {
         checkbox.checked = false;
         label.style.textDecoration = 'none';
     }
+      atualizandoTela();
 }
-atualizandoTela();
+
 
 if (window.innerWidth > 992) {
     document.querySelector('#btn-enviar').addEventListener('click', adicionarItemBanco);
