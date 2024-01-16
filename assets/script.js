@@ -48,7 +48,7 @@ const limparTela = () => {
 
 const atualizandoTela = () => {
     limparTela();
-    Banco.forEach((item, indice) => { criandoItem(item.tarefa, indice), marcaCheckbox(item, indice) })
+    Banco.forEach((item, indice) =>criandoItem(item.tarefa, indice), marcaCheckbox(item, indice))
 }
 
 const atualizarIndice = () => {
