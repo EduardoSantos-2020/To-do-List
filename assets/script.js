@@ -75,22 +75,11 @@ const adicionarItemBanco = (evento) => {
         atualizandoTela();
         atualizarIndice();
     }
-    if (evento.keyCode == 32 ||evento.type === "click" && InputTexto.value == '') {
-        evento.preventDefault();
+    if (evento.keyCode === 32 ||evento.type === "click" && InputTexto.value == '') {
         InputTexto.focus();
         InputTexto.placeholder = 'Digite uma Tarefa !';
         atualizandoTela();
     }
-
-    if (evento.type === "click" || evento.keyCode == 13 && InputTexto.value == '') {
-
-        InputTexto.focus();
-
-        InputTexto.placeholder = 'Digite uma Tarefa !';
-
-        atualizandoTela();
-    }
-
 
 }
 
