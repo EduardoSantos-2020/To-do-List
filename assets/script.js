@@ -128,10 +128,23 @@ const marcaCheckbox = (itemBox, i) => {
     }
 }
 
+function scrollBar(e){
+
+    if (e.type==="scroll") {
+        document.querySelector('body').classList.add('ativo')
+
+        setTimeout(()=>{
+            document.querySelector('body').classList.remove('ativo')
+        },800)
+    }
+
+}
+
     atualizandoTela();
 
     document.querySelector('#ItemList').addEventListener('click', ClickCadaItem);
     document.querySelector('#btn-enviar').addEventListener('click', adicionarItemBanco);
+    window.addEventListener('scroll',scrollBar);
     document.getElementById('input-text').addEventListener('keypress', adicionarItemBanco);
 
 

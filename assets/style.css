@@ -2,6 +2,32 @@
 :root{
   scroll-padding-top:40px;
 }
+
+ 
+body::-webkit-scrollbar{
+  width: 20px;
+  height: 8px;
+
+} 
+
+ body::-webkit-scrollbar-thumb{
+  width: 12px;
+  background-color:#00000000;
+  border-radius: 10px;
+  background-clip: content-box;
+  border: 6px solid transparent;
+}
+
+body::-webkit-scrollbar-thumb:active{
+  background-color: #797878;
+ 
+}
+
+.ativo::-webkit-scrollbar-thumb {
+ background-color: #00000060;
+}  
+
+
 body {
   box-sizing: border-box;
   font-family: 'Varela Round', sans-serif;
