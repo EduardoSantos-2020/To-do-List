@@ -27,7 +27,7 @@ const criandoItem = (Text, indice) => {
     containerText.append(text);
 
     let button = document.createElement('button');
-    button.setAttribute('type', 'button');
+    button.setAttribute('type','button');
     button.classList.add('fa-solid');
     button.classList.add('fa-xmark');
     button.setAttribute('data-indice', indice);

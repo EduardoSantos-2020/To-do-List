@@ -140,6 +140,7 @@ body {
   margin: 2em;
   border-radius: 8px;
   box-shadow: 2px 2px 3px #000;
+
 }
 
 .Itemcheck button {
@@ -247,14 +248,28 @@ body {
   }
 
   .lista-input {
-    height: 5em;
+   padding: 0;
+  }
+
+  .containerInput{
+    padding: 0;
+  }
+
+  .title {
+    width: 95%;
+    margin: 1em 2em 0 .2em;
+    font-size: 1.5rem;
+    padding: .5rem 0;
+    letter-spacing: .2rem;
+
   }
 
   #input-text {
-    padding: 8px;
+    padding: 10px;
+    margin: 2rem 0 0 0;
     outline: none;
-    font-size: .9rem;
-    width: 80%;
+    font-size: 1.2rem;
+    width: 70%;
     font-weight: bold;
     border-radius: 4px;
     box-shadow: 2px 2px 3px #000;
@@ -265,36 +280,29 @@ body {
 
   .botao {
     padding: 5px;
-    margin: 0 10px;
-    font-size: 1rem;
+    margin: 2rem 10px 0 10px;
+    font-size: 1.5rem;
   }
 
-  .title {
-    width: 90%;
-    margin: 1em 0;
-    font-size: 1rem;
-    padding: 10px;
-    letter-spacing: .3rem;
-
-  }
 
 
   .lista-tarefas {
     width: 100%;
+   padding: 1rem 0;
   }
 
   .Itemcheck {
-    width: 80%;
-    margin: 1em;
+    width: 87%;
     padding: .5rem;
+    margin: 1rem 0 0 .4rem;
   }
 
   .checkmark {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: .5rem;
-    height: .5rem;
+    width: 1rem;
+    height: 1rem;
     padding: 8px;
     border: solid 2px black;
     background-color: white;
@@ -304,23 +312,34 @@ body {
 
 
   .checkmark::after {
-    top: .1rem;
-    left: .5rem;
+    top: .2rem;
+    left: .7rem;
     width: .5rem;
-    height: 1rem;
+    height: 1.2rem;
   }
 
   .container-check input:not(:checked)~.checkmark {
     background-color: #CCC;
   }
 
+  .container-text{
+    width: 95%;
+    white-space: nowrap;
+    overflow-y:scroll;
+  }
+
+  .container-text::-webkit-scrollbar{
+    display: none;
+  }
+
   .text-list {
-    font-size: .90rem;
+    margin: .5rem;
+    font-size: 1.3rem;
   }
 
   .Itemcheck button {
-    font-size: 22px;
-    padding: 0 .2rem;
+    font-size: 2em;
+    padding: .2rem;
   }
 
   .container-check:hover .checkmark {
