@@ -78,7 +78,7 @@ const adicionarItemBanco = (evento) => {
     if (evento.keyCode === 32 ||evento.type === "click" && InputTexto.value == '') {
        setInterval(function(){
          InputTexto.focus();
-       },5000)
+       },10000)
         
         InputTexto.placeholder = 'Digite uma Tarefa !';
         atualizandoTela();
