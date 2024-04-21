@@ -147,11 +147,11 @@ body {
   font-size: 22px;
   font-weight: bolder;
   background-color: #ffff;
-  padding: .2rem .4rem;
+  padding: .1rem .2rem;
   border-radius: .2rem;
   cursor: pointer;
   margin: 0;
-  border: none;
+  border: 3px solid transparent;
   z-index: 1;
 }
 
@@ -256,8 +256,8 @@ body {
   }
 
   .title {
-    width: 95%;
-    margin: 1em 2em 0 .2em;
+    width: 87%;
+    margin: 1em 1.2em 0 1em;
     font-size: 1.5rem;
     padding: .5rem 0;
     letter-spacing: .2rem;
@@ -289,6 +289,7 @@ body {
   .lista-tarefas {
     width: 100%;
    padding: 1rem 0;
+   scroll-padding: 20px;
   }
 
   .Itemcheck {
@@ -338,8 +339,8 @@ body {
   }
 
   .Itemcheck button {
-    font-size: 2em;
-    padding: .2rem;
+    font-size: 1.7em;
+    border-radius: .3rem;
   }
 
   .container-check:hover .checkmark {
@@ -351,9 +352,15 @@ body {
     color: #000;
   }
 
-  .Itemcheck button:hover {
-    color: #000;
+  .Itemcheck button:hover{
     background-color: #fff;
+    color:#000 ;
+  }
+
+  .Itemcheck button:active {
+    background-color: #fe0000;
+    color: #fff;
+    border: 2px solid #000;
   }
 
 

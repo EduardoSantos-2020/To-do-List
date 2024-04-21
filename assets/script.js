@@ -59,7 +59,7 @@ const adicionarItemBanco = (evento) => {
 
     InputTexto = document.querySelector('#input-text');
 
-    if (InputTexto.value > "" && (evento.type === "click" || evento.keyCode === 13 )) {
+    if (InputTexto.value > "" && (evento.type === "click" || evento.keyCode === 13 || evento.type === "touchstart")) {
 
         Banco.push({ 'tarefa': InputTexto.value, "Status": false });
 
@@ -144,6 +144,7 @@ function scrollBar(e){
 
     document.querySelector('#ItemList').addEventListener('click', ClickCadaItem);
     document.querySelector('#btn-enviar').addEventListener('click', adicionarItemBanco);
+    document.querySelector('#btn-enviar').addEventListener("touchstart", adicionarItemBanco);
     window.addEventListener('scroll',scrollBar);
     document.getElementById('input-text').addEventListener('keypress', adicionarItemBanco);
 
