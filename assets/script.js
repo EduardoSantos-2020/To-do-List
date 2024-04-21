@@ -76,7 +76,10 @@ const adicionarItemBanco = (evento) => {
         atualizarIndice();
     }
     if (evento.keyCode === 32 ||evento.type === "click" && InputTexto.value == '') {
-        InputTexto.focus();
+       setInterval(function(){
+         InputTexto.focus();
+       },5000)
+        
         InputTexto.placeholder = 'Digite uma Tarefa !';
         atualizandoTela();
     }
