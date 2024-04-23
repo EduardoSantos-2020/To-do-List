@@ -58,30 +58,28 @@ const atualizarIndice = () => {
 const adicionarItemBanco = (evento) => {
 
     InputTexto = document.querySelector('#input-text');
+    
+    if (evento.keyCode == 13 || evento.type == "click") {
 
-    if (InputTexto.value > "" && (evento.type === "click" || evento.keyCode === 13 || evento.type === "touchstart")) {
+        if (InputTexto.value>'') {
+            Banco.push({ 'tarefa': InputTexto.value, "Status": false });        
+            InputTexto.placeholder = 'Qual é sua nova tarefa !';
 
-        Banco.push({ 'tarefa': InputTexto.value, "Status": false });
-
-        InputTexto.value = '';
-        InputTexto.placeholder = 'Qual é sua nova tarefa !';
-
-
-        if (window.innerWidth > 992) {
+        }else{
+            InputTexto.placeholder = 'Digite uma Tarefa !';
             InputTexto.focus();
-            atualizandoTela();
+            atualizandoTela(); 
         }
 
+        if (Banco.length>1) {
+        InputTexto.value = '';
+        InputTexto.focus();
+        atualizandoTela();
+
+        }
+        
         atualizandoTela();
         atualizarIndice();
-    }
-    if (evento.keyCode === 32 ||evento.type === "click" && InputTexto.value == '') {
-       setInterval(function(){
-         InputTexto.focus();
-       },10000)
-        
-        InputTexto.placeholder = 'Digite uma Tarefa !';
-        atualizandoTela();
     }
 
 }
@@ -134,10 +132,10 @@ const marcaCheckbox = (itemBox, i) => {
 function scrollBar(e){
 
     if (e.type==="scroll") {
-        document.querySelector('body').classList.add('ativo')
+        document.querySelector('.lista-tarefas').classList.add('ativo')
 
         setTimeout(()=>{
-            document.querySelector('body').classList.remove('ativo')
+            document.querySelector('.lista-tarefas').classList.remove('ativo')
         },800)
     }
 
@@ -145,10 +143,9 @@ function scrollBar(e){
 
     atualizandoTela();
 
+    document.querySelector('#ItemList').addEventListener('scroll',scrollBar);
     document.querySelector('#ItemList').addEventListener('click', ClickCadaItem);
     document.querySelector('#btn-enviar').addEventListener('click', adicionarItemBanco);
-    document.querySelector('#btn-enviar').addEventListener("touchstart", adicionarItemBanco);
-    window.addEventListener('scroll',scrollBar);
     document.getElementById('input-text').addEventListener('keypress', adicionarItemBanco);
 
 
