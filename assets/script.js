@@ -73,7 +73,6 @@ const adicionarItemBanco = (evento) => {
 
         if (Banco.length>1) {
         InputTexto.value = '';
-        InputTexto.focus();
         atualizandoTela();
 
         }
