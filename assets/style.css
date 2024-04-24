@@ -4,6 +4,7 @@ body {
   box-sizing: border-box;
   font-family: 'Varela Round', sans-serif;
   background-color: #F4D03F;
+  scroll-padding-top:40px;
   margin: 0;
   padding: 0;
   
@@ -85,6 +86,7 @@ body {
   width: 45%;
   height: 26em;
   margin: 0 25%;
+  padding: .2rem .5rem;
   overflow-y: scroll;
   flex-direction: column;
   background-color: #e2b812;
@@ -125,7 +127,7 @@ body {
   padding: 10px;
   word-break: break-all;
   user-select: none;
-  margin: 2em;
+  margin: 1.5em;
   border-radius: 8px;
   box-shadow: 2px 2px 3px #000;
 }
@@ -248,7 +250,7 @@ body {
 
   .title {
     width: 87%;
-    margin: 1em 1.2em 0 1em;
+    margin: .3em 1.2em 0 .5em;
     font-size: 1.5rem;
     padding: .5rem 0;
     letter-spacing: .2rem;
@@ -257,7 +259,7 @@ body {
 
   #input-text {
     padding: 10px;
-    margin: 2rem 0 0 0;
+    margin: 1rem 0 0 0;
     outline: none;
     font-size: 1.2rem;
     width: 70%;
@@ -268,20 +270,20 @@ body {
   }
 
   .botao {
-    margin: 2rem 10px 0 10px;
+    margin: 1rem 1rem 0 1rem;
     font-size: 1.5rem;
   }
 
   .lista-tarefas {
-    width: 95%;
-    height: 30em;
-    margin: 2rem  0  0 .5rem ;
+    width: 90%;
+    height: 23em;
+    margin: 1rem 0 0 .5rem ;
   }
 
   .Itemcheck {
     width: 87%;
-    padding: .5rem;
-    margin: 1rem 0 0 1rem;
+    padding:.5rem;
+    margin: 1rem 0 0 .3rem;
   }
 
   .checkmark {
