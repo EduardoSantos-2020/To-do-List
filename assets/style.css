@@ -90,7 +90,8 @@ body {
   overflow-y: scroll;
   flex-direction: column;
   background-color: #e2b812;
-  border: 1px solid #3d3c3c;
+  border: .1rem solid #3d3c3c;
+  box-shadow: inset 3px 3px 3px  #000;
   border-radius: 6px;
   scroll-padding-top:40px;
 }
@@ -276,14 +277,16 @@ body {
 
   .lista-tarefas {
     width: 90%;
-    height: 23em;
-    margin: 1rem 0 0 .5rem ;
+    height: 24em;
+    padding: .2rem .5rem .9rem .5rem ;
+    margin: 1rem 0 0 .7rem;
+    overflow-x: hidden
   }
 
   .Itemcheck {
-    width: 94%;
+    width: 95%;
     padding:.5rem;
-    margin: 1rem 0 0 .2rem;
+    margin: 1rem 0 0 .1rem;
   }
 
   .checkmark {

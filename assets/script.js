@@ -78,7 +78,7 @@ const adicionarItemBanco = (evento) => {
 
        setTimeout(()=>{
         atualizarIndice();
-       },1200)
+       },1000)
 
   }
     atualizandoTela();
