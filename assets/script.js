@@ -64,7 +64,11 @@ const adicionarItemBanco = (evento) => {
         if (InputTexto.value>'') {
             Banco.push({ 'tarefa': InputTexto.value, "Status": false });        
             InputTexto.placeholder = 'Qual é sua nova tarefa !';
-            document.querySelector('#ItemList').focus()
+           setTimeout(()=>{
+        atualizarIndice();
+       },1000);
+
+ document.querySelector('#ItemList').focus()
         }else{
             InputTexto.placeholder = 'Digite uma Tarefa !';
             InputTexto.focus();
@@ -75,10 +79,6 @@ const adicionarItemBanco = (evento) => {
         InputTexto.value = '';
         atualizandoTela();
         }
-
-       setTimeout(()=>{
-        atualizarIndice();
-       },1000)
 
   }
     atualizandoTela();
