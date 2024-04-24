@@ -75,10 +75,11 @@ const adicionarItemBanco = (evento) => {
         InputTexto.value = '';
         atualizandoTela();
         }
-
-        atualizandoTela();
+    setTimeout(()=>{
         atualizarIndice();   
-    }
+    },1200);
+
+    atualizandoTela();
 
 }
 
