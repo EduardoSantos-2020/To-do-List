@@ -291,7 +291,7 @@ position: relative;
   .lista-tarefas {
     width: 88%;
     height: 25em;
-    padding: .4rem .5rem .9rem .3rem ;
+    padding: .7rem .5rem .6rem .3rem ;
     margin: 1rem 0 0 .7rem; 
     overflow-x: hidden
   }
