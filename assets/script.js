@@ -63,8 +63,7 @@ const adicionarItemBanco = (evento) => {
 
         if (InputTexto.value>'') {
             Banco.push({ 'tarefa': InputTexto.value, "Status": false });        
-            InputTexto.placeholder = 'Qual é sua nova tarefa !';
-            InputTexto.blur()
+            InputTexto.placeholder = 'Qual é sua nova tarefa ?';
            setTimeout(()=>{
         atualizarIndice();
        },1000);

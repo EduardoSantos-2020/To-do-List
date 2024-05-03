@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
+
+
 body {
   box-sizing: border-box;
   font-family: 'Varela Round', sans-serif;
-  background-color: #F4D03F;
+  background-color: #F4D03F; 
   scroll-padding-top:40px;
   margin: 0;
   padding: 0;
@@ -83,24 +85,33 @@ body {
 }
 
 .lista-tarefas {
-  width: 40%;
-  height: 25em;
-  margin: 0 27%;
-  padding: .2rem .5rem;
-  overflow-y: scroll;
+  width: 46%;
+  margin: 0 25%;
   flex-direction: column;
-  background-color: #e2b812;
-  border: .1rem solid #3d3c3c;
-  box-shadow: inset 3px 3px 3px  #000;
+  z-index: 0; 
+  border: #000  solid 2px ;
+  padding: .3rem 0 .4rem 0;
   border-radius: 6px;
+  background-color: #cca406;
+  box-shadow: inset 0px -1px 5px 5px rgba(0,0,0,0.75);
   scroll-padding-top:40px;
 }
 
-.lista-tarefas::-webkit-scrollbar{
+.lista{
+position: relative;
+
+  height: 24.9em;
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll; 
+}
+
+
+.lista::-webkit-scrollbar{
   width: 12px;
 } 
 
- .lista-tarefas::-webkit-scrollbar-thumb{
+ .lista::-webkit-scrollbar-thumb{
   background-color:#00000000;
    border-radius: 6px; 
    background-clip: content-box;
@@ -108,19 +119,19 @@ body {
   transition: all .5s ease-in-out;
 } 
 
-.lista-tarefas::-webkit-scrollbar-thumb:active{
+.lista::-webkit-scrollbar-thumb:active{
   background-color: #666565;
  
 }
  .ativo::-webkit-scrollbar-thumb {
-  background-color:#00000031;
+  background-color:#00000000;
   transition: all .5s ease-in;
 }   
 
 .Itemcheck {
   position: relative;
   display: flex;
-  width: 70%;
+  width: 85%;
   align-items: center;
   border: 2px solid #000;
   background-color: #fff;
@@ -143,7 +154,7 @@ body {
   user-select: none;
   margin: 0;
   border: 3px solid transparent;
-  z-index: 1;
+  z-index: 2;
 }
 
 .Itemcheck:hover {
@@ -238,20 +249,22 @@ body {
 @media only screen and (max-width:992px) {
 
   .container {
-    width: 100%;
+   margin: 0;
   }
 
   .lista-input {
    padding: 0;
+   margin: 0;
   }
 
   .containerInput{
     padding: 0;
+    margin: 0;
   }
 
   .title {
-    width: 87%;
-    margin: .3em 1.2em 0 .5em;
+    width: 85%;
+    /* margin: .3em 1.2em 0 .5em; */
     font-size: 1.5rem;
     padding: .5rem 0;
     letter-spacing: .2rem;
@@ -276,17 +289,25 @@ body {
   }
 
   .lista-tarefas {
-    width: 90%;
-    height: 24em;
-    padding: .2rem .5rem .9rem .5rem ;
-    margin: 1rem 0 0 .7rem;
+    width: 88%;
+    height: 25em;
+    padding: .4rem .5rem .9rem .3rem ;
+    margin: 1rem 0 0 .7rem; 
     overflow-x: hidden
   }
 
+  .lista{
+    height: 23.4em;
+    margin: 0;
+    padding:1rem 0;
+    overflow-x: hidden
+    }
+
+
   .Itemcheck {
-    width: 95%;
+     width: 90%;
     padding:.5rem;
-    margin: 1rem 0 0 .1rem;
+     margin: .4rem .1rem 0 .4rem;
   }
 
   .checkmark {
