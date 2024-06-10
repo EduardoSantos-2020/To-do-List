@@ -134,10 +134,10 @@ const marcaCheckbox = (itemBox, i) => {
 function scrollBar(e){
 
     if (e.type==="scroll") {
-        document.querySelector('.lista-tarefas').classList.add('ativo')
+        document.querySelector('#ItemList').classList.add('ativo')
 
         setTimeout(()=>{
-            document.querySelector('.lista-tarefas').classList.remove('ativo')
+            document.querySelector('#ItemList').classList.remove('ativo')
         },800)
     }
 

@@ -108,14 +108,15 @@ position: relative;
 
 
 .lista::-webkit-scrollbar{
-  width: 12px;
+  width: 25px;
+ height: 100%;
 } 
 
  .lista::-webkit-scrollbar-thumb{
   background-color:#00000000;
-   border-radius: 6px; 
+   border-radius: 15px; 
    background-clip: content-box;
-  border: 3px solid transparent;  
+  border: 9px inset  transparent;  
   transition: all .5s ease-in-out;
 } 
 
@@ -124,7 +125,7 @@ position: relative;
  
 }
  .ativo::-webkit-scrollbar-thumb {
-  background-color:#00000000;
+  background-color:#00000036;
   transition: all .5s ease-in;
 }   
 
@@ -247,6 +248,19 @@ position: relative;
 }
 
 @media only screen and (max-width:992px) {
+  .lista::-webkit-scrollbar{
+    width: 20px;
+   
+  } 
+  
+   .lista::-webkit-scrollbar-thumb{
+    background-color:#00000000;
+     border-radius: 12px; 
+     background-clip: content-box;
+    border: 7px inset  transparent;  
+    transition: all .5s ease-in-out;
+  } 
+
 
   .container {
    margin: 0;
@@ -291,15 +305,14 @@ position: relative;
   .lista-tarefas {
     width: 88%;
     height: 25em;
-    padding: .7rem .5rem .6rem .3rem ;
+    padding: .3rem .5rem .6rem .3rem ;
     margin: 1rem 0 0 .7rem; 
     overflow-x: hidden
   }
 
   .lista{
-    height: 23.4em;
-    margin: 0;
-    padding:1rem 0;
+    margin: 0 0 0 .3rem;
+    padding: 0;
     overflow-x: hidden
     }
 
